@@ -10,6 +10,7 @@ const receipeCategoryRouter = require("./app/recipe_category/router");
 const receipeRouter = require("./app/recipe/router");
 const authRouter = require("./app/auth/router");
 const searchRouter = require("./app/search/router");
+const serveHistoryRouter = require("./app/serve_history/router");
 
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -44,6 +45,7 @@ app.use("/recipe-categories", receipeCategoryRouter);
 app.use("/recipes", receipeRouter);
 app.use("/auth", authRouter);
 app.use("/search", searchRouter);
+app.use("/serve-histories", serveHistoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

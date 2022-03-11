@@ -6,10 +6,9 @@ module.exports = {
     try {
       const token = req.headers.authorization
         ? req.headers.authorization.replace("Bearer ", "")
-        : res.status(500).json({ message: "Not Authorized" });
+        : res.status(500).json({ status: false, message: "Unauthorized" });
 
       const data = jwt.verify(token, config.jwtKey);
-
       const user = await User.findOne({ id: data.user.id });
       if (!user) {
         throw new Error();
@@ -18,7 +17,7 @@ module.exports = {
       req.token = token;
       next();
     } catch (err) {
-      res.status(401).json({ error: "Not Authorize", token });
+      res.status(401).json({ status: false, message: err.message, token });
     }
   },
 };
