@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require("../../db");
 
 const RecipeCategories = sequelize.define(
-  "recipe_categories",
+  "RecipeCategory",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,6 +12,9 @@ const RecipeCategories = sequelize.define(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        notEmpty: true,
+      },
     },
     createdAt: {
       type: DataTypes.DATE,
