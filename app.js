@@ -41,6 +41,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // API
+app.use("/", authRouter);
 app.use("/recipe-categories", receipeCategoryRouter);
 app.use("/recipes", receipeRouter);
 app.use("/auth", authRouter);

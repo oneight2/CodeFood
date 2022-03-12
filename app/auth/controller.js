@@ -4,6 +4,13 @@ const jwt = require("jsonwebtoken");
 const config = require("../../config");
 
 module.exports = {
+  index: async (req, res) => {
+    try {
+      res.json({ status: true, message: "Welcome to Auth API" });
+    } catch (err) {
+      res.json({ status: false, message: err });
+    }
+  },
   register: async (req, res) => {
     try {
       const { username, password } = req.body;
