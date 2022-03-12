@@ -1,8 +1,22 @@
 const { Sequelize } = require("sequelize");
-const { database, username, password, host, dialect } = require("../config");
+const {
+  database,
+  username,
+  password,
+  host,
+  dialect,
+  port,
+} = require("../config");
+
+console.log("DB", database);
+console.log("USER", username);
+console.log("PASS", password);
+console.log("HOST", host);
+console.log("DIALECT", dialect);
 
 const sequelize = new Sequelize(database, username, password, {
   host: host,
+  port: port,
   dialect: dialect,
   timezone: "+07:00",
   operatorsAliases: false,

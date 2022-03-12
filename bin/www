@@ -34,6 +34,7 @@ sequelize
     console.log("Terhubung ke port:", `http://localhost:${port}`);
   })
   .catch((err) => {
+    console.log("Terhubung ke port:", `http://localhost:${port}`);
     console.log("Message: Gagal tekoneksi dengan database");
     console.log("Error:", err);
   });
