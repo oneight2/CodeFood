@@ -36,8 +36,8 @@ module.exports = {
         },
         include: [RecipeCategories],
       });
-      recipe.ingredientsPerServing = JSON.parse(recipe.ingredientsPerServing);
       if (recipe) {
+        recipe.ingredientsPerServing = JSON.parse(recipe.ingredientsPerServing);
         res.status(200).json({
           status: true,
           message: "Success",

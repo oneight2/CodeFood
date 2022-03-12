@@ -26,6 +26,9 @@ const ServeHistory = sequelize.define(
     nServing: {
       type: DataTypes.INTEGER,
       defaultValue: 1,
+      validate: {
+        min: 1,
+      },
     },
     recipeCategoryId: {
       type: DataTypes.INTEGER,
