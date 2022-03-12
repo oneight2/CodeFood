@@ -9,7 +9,7 @@ module.exports = {
   serviceName: process.env.SERVICE_NAME,
   username: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
-  database: "db_codefood",
+  database: process.env.MYSQL_DBNAME,
   host: process.env.MYSQL_HOST,
   port: process.env.MYSQL_PORT,
   dialect: "mysql",
